@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 
+#include <cstring>
+
 using statistics_map = std::map<std::string, std::size_t>;
 
 std::pair<statistics_map, statistics_map> parse_file(const std::string& input_filename)
@@ -34,7 +36,7 @@ int main(int argc, char *argv[])
 {
 	std::size_t top_count = std::numeric_limits<std::size_t>::max();
 	int i = 1;
-	if (strcmp(argv[i], "-n") == 0) {
+	if (std::strcmp(argv[i], "-n") == 0) {
 		top_count = std::stoull(argv[++i]);
 		++i;
 	}
